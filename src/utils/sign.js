@@ -5,25 +5,24 @@ module.exports = {
   sign: (
     character,
     meanings = [],
-    pronounciation,
+    pronunciation,
     example,
     level,
   ) => {
     if (
       !character ||
       (!meanings || meanings.length === 0) ||
-      !pronounciation
+      !pronunciation
     ) {
       return _UNDEF_;
     }
 
-    const simplePronounciation = simplifyString(pronounciation);
-    const simpleMeanings = meanings.map(word => simplifyString(word));
+    const simplePronunciation = simplifyString(pronunciation);
 
     const schema = ({
       character,
-      meanings: simpleMeanings,
-      pronounciation: simplePronounciation,
+      meanings,
+      pronunciation: simplePronunciation,
       example
     });
 

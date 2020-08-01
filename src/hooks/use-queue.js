@@ -8,10 +8,12 @@ const useQueue = () => {
 
   const queues = CoreService.queues;
   const activeQueue = CoreService.getActiveQueueIndex();
+  const leadingSign = CoreService.getLeadingSign();
 
   return [
     queues,
     activeQueue,
+    leadingSign,
     completed,
     (result = UPDATE_LEADING_SIGN.advance) => {
       if (result === UPDATE_LEADING_SIGN.advance) {

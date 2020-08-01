@@ -1,6 +1,5 @@
 module.exports = {
   _UNDEF_: undefined,
-
   QUEUE_COUNT: 3,
   QUEUE_SIZE: 4,
   SUBSET_LIMIT: 40,
