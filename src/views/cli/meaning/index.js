@@ -9,12 +9,12 @@ const QueueComponent = importJsx('../queue');
 
 const styleHighlightedText = {
   backgroundColor: '#ffffff',
-  color: '#000000'
+  color: '#ff5050'
 };
 
 const styleVisibleMeaning = {
   backgroundColor: '',
-  color: '#ffffff'
+  color: ''
 };
 
 const styleHiddenMeaning = {
@@ -83,7 +83,7 @@ const MeaningComponent = () => {
       return;
     }
 
-    if (userInput.length < USER_INPUT_LIMIT && input.match(/^[a-zA-Z0-9]$/i)) {
+    if (userInput.length < USER_INPUT_LIMIT && input.match(/^[a-zA-Z0-9\s]$/i)) {
       if (!verifyInput.visible) {
         updateUserInput(i => i + input);
       }
@@ -138,14 +138,14 @@ const MeaningComponent = () => {
               borderStyle="round"
               borderColor="#594444"
             >
-              <Text color="#ffffff">
+              <Text color="">
                 Describe the
                 <Text color="#ff5050">
                   {paddedString('highlighted')}
                 </Text>
                 sign:
               </Text>
-              <Text color="#ffffff">
+              <Text color="">
                 {`${userInput}${Array(USER_INPUT_LIMIT).fill('_').join('')}`.substr(0, USER_INPUT_LIMIT)}
               </Text>
             </Box>
@@ -187,7 +187,7 @@ const MeaningComponent = () => {
             minWidth={20}
             flexDirection="row"
           >
-            <Text color="#ffffff">
+            <Text color="">
               {verifyInput.visible && (
                 <>
                   Was your answer correct?{' '}
